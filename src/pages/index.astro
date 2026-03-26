@@ -52,7 +52,7 @@ import Ask from '../components/sections/Ask.astro';
   <button class="slide-nav-btn" id="slide-prev" aria-label="Section précédente">
     <svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="12,10 8,6 4,10"/></svg>
   </button>
-  <div class="slide-nav-count" id="slide-count">1 / 1</div>
+  <div class="nav-dots" id="nav-dots"></div>
   <button class="slide-nav-btn" id="slide-next" aria-label="Section suivante">
     <svg width="22" height="22" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,6 8,10 12,6"/></svg>
   </button>
@@ -88,18 +88,46 @@ import Ask from '../components/sections/Ask.astro';
   }, { threshold: 0.08 });
   document.querySelectorAll('.slide').forEach(s => slideObserver.observe(s));
 
+  // ── Progress bar ──
+  const progressBar = document.createElement('div');
+  progressBar.id = 'nav-progress';
+  document.querySelector('nav')?.appendChild(progressBar);
+  window.addEventListener('scroll', () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = total > 0 ? (window.scrollY / total * 100) + '%' : '0%';
+  }, { passive: true });
+
   // ── Slide navigator ──
   const allSections = Array.from(document.querySelectorAll('section[id]'));
   const btnPrev = document.getElementById('slide-prev') as HTMLButtonElement | null;
   const btnNext = document.getElementById('slide-next') as HTMLButtonElement | null;
-  const countEl = document.getElementById('slide-count');
+  const dotsContainer = document.getElementById('nav-dots');
   let currentIdx = 0;
 
+  // Build section title map from nav links
+  const sectionTitles: Record<string, string> = {};
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const id = a.getAttribute('href')?.replace('#', '');
+    if (id) sectionTitles[id] = (a as HTMLElement).textContent?.trim() || id;
+  });
+
+  // Create dots
+  const dots: HTMLButtonElement[] = [];
+  allSections.forEach((sec, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.setAttribute('aria-label', sectionTitles[sec.id] || sec.id);
+    dot.title = sectionTitles[sec.id] || sec.id;
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer?.appendChild(dot);
+    dots.push(dot);
+  });
+
   function updateNav() {
-    if (!btnPrev || !btnNext || !countEl) return;
-    countEl.textContent = `${currentIdx + 1} / ${allSections.length}`;
+    if (!btnPrev || !btnNext) return;
     btnPrev.disabled = currentIdx === 0;
     btnNext.disabled = currentIdx === allSections.length - 1;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
   }
 
   function goTo(idx: number) {
@@ -111,6 +139,13 @@ import Ask from '../components/sections/Ask.astro';
 
   btnPrev?.addEventListener('click', () => goTo(currentIdx - 1));
   btnNext?.addEventListener('click', () => goTo(currentIdx + 1));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goTo(currentIdx + 1); }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); goTo(currentIdx - 1); }
+  });
 
   // Sync index with scroll position
   const slideNavObserver = new IntersectionObserver((entries) => {
