@@ -1,0 +1,577 @@
+% ─────────────────────────────────────────────────────────────────────────────
+%  FIGHTCOFFEE — Business Plan v2.3 (analyse financière approfondie mars 2026)
+%  Compilé avec xelatex
+% ─────────────────────────────────────────────────────────────────────────────
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\usepackage{geometry}
+\geometry{top=2.2cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\usepackage{xcolor}
+\definecolor{fc-red}{HTML}{C8241A}
+\definecolor{fc-gold}{HTML}{9A7A2E}
+\definecolor{fc-ink}{HTML}{181614}
+\definecolor{fc-ink2}{HTML}{4A4540}
+\definecolor{fc-ink3}{HTML}{8A847A}
+\definecolor{fc-bg2}{HTML}{F0EDE7}
+\definecolor{fc-rule}{HTML}{D8D4CC}
+\definecolor{fc-warn}{HTML}{FEF3E2}
+\definecolor{fc-warn-border}{HTML}{D97706}
+\definecolor{fc-tip}{HTML}{EFF6FF}
+\definecolor{fc-tip-border}{HTML}{9A7A2E}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\newtcolorbox{warnbox}{
+  colback=fc-warn, colframe=fc-warn-border,
+  leftrule=3pt, toprule=0pt, bottomrule=0pt, rightrule=0pt,
+  boxsep=4pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fontupper=\small\color{fc-ink2}
+}
+\newtcolorbox{tipbox}{
+  colback=fc-tip, colframe=fc-tip-border,
+  leftrule=3pt, toprule=0pt, bottomrule=0pt, rightrule=0pt,
+  boxsep=4pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fontupper=\small\color{fc-ink2}
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=fc-red,
+  urlcolor=fc-red,
+  pdfauthor={FightCoffee},
+  pdftitle={FightCoffee — Business Plan 2026}
+}
+
+% ── Fonts ────────────────────────────────────────────────────────────────────
+\setmainfont{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+% ── Section styles ───────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\Large\bfseries\color{fc-ink}}
+  {\color{fc-red}\thesection.}{0.6em}{}[\vspace{-4pt}\color{fc-rule}\rule{\textwidth}{0.6pt}]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{fc-ink}}
+  {}{0em}{}
+
+\titlespacing{\section}{0pt}{20pt}{8pt}
+\titlespacing{\subsection}{0pt}{12pt}{4pt}
+
+% ── Header / Footer ──────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{fc-red}\textbf{FIGHTCOFFEE} \color{fc-ink3}— Business Plan · Usage interne}
+\fancyfoot[C]{\small\color{fc-ink3}Page \thepage\ · Confidentiel — Ne pas diffuser}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{fc-rule}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrulewidth}{0pt}
+
+% ── Helpers ──────────────────────────────────────────────────────────────────
+\newcommand{\eyebrow}[1]{%
+  \vspace{4pt}
+  {\small\color{fc-ink3}\texttt{— #1}}
+  \vspace{2pt}
+}
+
+\newcommand{\redcell}[1]{\textcolor{fc-red}{\textbf{#1}}}
+\newcommand{\goldcell}[1]{\textcolor{fc-gold}{\textbf{#1}}}
+
+\setlist[itemize]{leftmargin=1.4em, itemsep=2pt, topsep=4pt}
+\renewcommand{\labelitemi}{\color{fc-ink3}–}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── TITLE PAGE ───────────────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{center}
+  {\fontsize{48}{52}\selectfont\bfseries\color{fc-ink} FIGHT}\\[2pt]
+  {\fontsize{48}{52}\selectfont\bfseries\color{fc-red} COFFEE}\\[12pt]
+  {\large\color{fc-ink3}\texttt{HYBRID COMBAT \& LIFESTYLE HUB}}\\[40pt]
+  \color{fc-rule}\rule{10cm}{0.6pt}\\[24pt]
+  {\Large\bfseries\color{fc-ink} BUSINESS PLAN — USAGE INTERNE}\\[10pt]
+  {\normalsize\color{fc-ink2} Étude de marché · Prévisionnel financier 3 ans · Pilotage}\\[6pt]
+  {\normalsize\color{fc-ink2} Pleurtuit · Saint-Malo · Dinard — Bretagne côtière}\\[40pt]
+  \color{fc-rule}\rule{10cm}{0.6pt}\\[20pt]
+  {\small\color{fc-ink3} Document confidentiel — v2.3 · Mars 2026}\\[4pt]
+  {\small\color{fc-red} contact@fightcoffee.fr · fightcoffee.fr}
+\end{center}
+
+\newpage
+
+% ── TABLE DES MATIÈRES ───────────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Présentation du projet}
+\eyebrow{01 — PRÉSENTATION}
+
+\subsection{Vision}
+
+FightCoffee est un hub hybride combinant sport de combat, coffee shop premium, recovery et événementiel dans un seul lieu cohérent. Le concept s'implante à Pleurtuit, au cœur du bassin Saint-Malo / Dinard, pour adresser une demande locale non satisfaite : un lieu de vie sportif, social et identitaire.
+
+Le projet ne vend pas des cours. Il crée une appartenance. Chaque élément renforce les autres : l'entraînement pousse à rester, le café crée du lien, les événements font venir, la communauté retient.
+
+\subsection{Les quatre piliers}
+
+\begin{itemize}
+  \item \textbf{Intensité :} Le combat au cœur — MMA, Luta Livre, Boxe, BJJ, Muay Thaï. L'identité centrale du lieu.
+  \item \textbf{Lifestyle :} Coffee shop soigné, espace social pensé, esthétique assumée. Un lieu où l'on a envie de rester.
+  \item \textbf{Communauté :} Appartenance forte, événements réguliers, rituels partagés. Les membres font partie de quelque chose.
+  \item \textbf{Expérience :} Fight nights, résidences fighters, diffusions UFC, masterclass. Le lieu est vivant et évolue.
+\end{itemize}
+
+\subsection{Implantation}
+
+\begin{itemize}
+  \item \textbf{Localisation cible :} Pleurtuit (35730) — commune en développement, entre Saint-Malo et Dinard, axe commercial dynamique.
+  \item \textbf{Surface visée :} 300 à 400 m² en rez-de-chaussée, accessibilité voiture et vélo, visibilité depuis axe passant.
+  \item \textbf{Statut juridique envisagé :} SAS ou SARL — à définir selon structure de l'actionnariat et montage financier retenu.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Étude de marché}
+\eyebrow{02 — ÉTUDE DE MARCHÉ}
+
+\subsection{Zone de chalandise}
+
+La zone primaire couvre Pleurtuit et ses communes limitrophes immédiates (La Richardais, Miniac-Morvan). La zone secondaire intègre Saint-Malo et Dinard, accessibles en 10 à 15 minutes. La zone tertiaire étend le bassin à Dol-de-Bretagne et au Pays de Rance, soit environ 120 000 habitants permanents.
+
+En été, la population du bassin augmente d'environ 40\% grâce au tourisme côtier — flux directement exploitable via l'offre événementielle et le coffee shop.
+
+\textbf{Note importante :} Pour un engagement gym régulier, le bassin opérationnel réel se limite à 10–15 minutes de trajet, soit environ 70 000–75 000 habitants (Pleurtuit, Saint-Malo, Dinard et communes proches).
+
+\subsection{Potentiel de marché par segment}
+
+\begin{center}
+\begin{tabular}{@{}p{5cm}p{3.5cm}p{2.2cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Segment} & \color{white}\textbf{Population cible} & \color{white}\textbf{Taux pénétr.} & \color{white}\textbf{Membres potentiels} \\
+\midrule
+Enfants 6–12 ans & \textasciitilde6 000 enfants & 3–4\% & 180–240 \\
+\rowcolor{fc-bg2} Ados 13–17 ans & \textasciitilde5 500 ados & 3–5\% & 165–275 \\
+Adultes 18–45 ans & \textasciitilde38 000 adultes & 0,6–0,9\% & 228–342 \\
+\rowcolor{fc-bg2} Adultes 45+ ans & \textasciitilde22 000 pers. & 0,3\% & 66–110 \\
+Touristes été (+40\%) & \textasciitilde50 000/an & variable & 30–80/saison \\
+\midrule
+\textbf{Total addressable} & \textbf{\textasciitilde70 000 hab.} & — & \textbf{670–1 047} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+{\small\color{fc-ink3}\textit{Note : taux de pénétration révisés à la baisse par rapport aux moyennes nationales FFKBDA/INSEE pour tenir compte du contexte semi-rural breton et de la présence de clubs associatifs à tarification très inférieure.}}
+
+\subsection{Tendances de fond}
+
+\begin{itemize}
+  \item \textbf{Hybridation sport / lifestyle :} CrossFit et padel ont validé le principe de l'appartenance communautaire premium.
+  \item \textbf{Recovery \& bien-être :} Marché recovery (sauna, cold plunge) en croissance de 15\%/an en Europe.
+  \item \textbf{Coffee shop premium :} Marché café de spécialité +10\%/an en France. Les 20–40 ans urbains sont les premiers consommateurs.
+  \item \textbf{MMA \& contenu :} L'UFC génère des audiences record. Les jeunes pratiquants s'identifient à un univers — la salle doit être instagrammable.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Analyse concurrentielle}
+\eyebrow{03 — CONCURRENCE}
+
+\subsection{Concurrents directs — sports de combat}
+
+La zone Saint-Malo / Dinard / Pleurtuit compte plusieurs structures de combat, toutes associatives et sans dimension lifestyle :
+
+\begin{itemize}
+  \item Corsaire Muay Thaï (Pleurtuit) — concurrent \#1, même commune, galas FFAMT réguliers. 100\% associatif, gymnase municipal, aucune identité de marque ni espace social.
+  \item Boxe Américaine de Dinard — disciplines pieds/poings, fonctionnement asso classique.
+  \item ASPP (Dinard) — section 100\% féminine dédiée, positionnement niche.
+  \item Boxing Club Malouin (Saint-Malo) — boxe et MMA, gymnase municipal.
+  \item SMBJJ (Saint-Malo) — BJJ référence locale, fondé 2010, sans lifestyle.
+  \item Dojo de Pleurtuit — Aikido, Judo, Karaté. Gymnase municipal 140 m².
+\end{itemize}
+
+\subsection{Concurrents indirects — fitness}
+
+\begin{itemize}
+  \item CrossFit Dinard (La Richardais, 315 m², 2024) — communauté forte, approche lifestyle partielle.
+  \item HandStand CrossFit (Saint-Malo / Dinard) — coaching premium, Hyrox.
+  \item Gigafit (Saint-Malo / Dinard) — chaîne low cost, volume, sans âme.
+\end{itemize}
+
+\subsection{Conclusion concurrentielle}
+
+Aucun acteur ne combine sport de combat, coffee shop, recovery et événementiel sur la zone. Les clubs existants opèrent tous dans des gymnases municipaux, sans lieu propre, sans marque, sans expérience.
+
+FightCoffee crée une catégorie au-dessus. Son positionnement premium, son espace physique propriétaire et son modèle multi-revenus ne trouvent aucun équivalent local.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Stratégie commerciale \& offre}
+\eyebrow{04 — STRATÉGIE COMMERCIALE}
+
+\subsection{Grille tarifaire}
+
+Tarification revue en cohérence avec le marché local semi-rural breton et la concurrence associative (200–400 €/an). Positionnement premium justifié par l'expérience, mais accessible à une clientèle CSP intermédiaire.
+
+\begin{center}
+\begin{tabular}{@{}p{4.5cm}p{2.8cm}p{5.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Formule} & \color{white}\textbf{Tarif / mois} & \color{white}\textbf{Contenu} \\
+\midrule
+Enfants (6–12 ans) & \redcell{35–45 €} & 2 cours/sem · stages vacances \\
+\rowcolor{fc-bg2} Ados (13–17 ans) & \redcell{45–55 €} & 3 cours/sem · sparring encadré \\
+Adulte Essentiel & \redcell{69 €} & Toutes disciplines · cours collectifs illimités \\
+\rowcolor{fc-bg2} Adulte Combat+ & \redcell{89 €} & Toutes disciplines + accès libre tatami · priorité planning \\
+Adulte Full Access & \redcell{119 €} & Tout inclus + recovery (sauna, ice bath, yoga) \\
+\rowcolor{fc-bg2} Coaching privé (1h) & \redcell{55–80 €} & Par séance · tarifs dégressifs pack \\
+Semi-collectif (4–8 pers.) & \redcell{30–45 €/pers.} & Par séance thématique \\
+\rowcolor{fc-bg2} Session recovery seule & \redcell{12–20 €} & À l'unité · sauna + cold plunge \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+{\small\color{fc-ink3}\textit{Référence marché : clubs associatifs locaux 200–400 €/an · Monkey Gym Rennes (MMA, Boxe, Muay Thaï, Lutte) : 39–49 €/mois toutes disciplines. FightCoffee se positionne 20–40 € au-dessus grâce à l'expérience hybride, le cadre premium et le recovery. Tarif engagement annuel : –15\% (2 mois offerts).}}
+
+\subsection{Stratégie d'acquisition membres}
+
+\begin{itemize}
+  \item \textbf{Pré-lancement :} Campagne de pré-inscription 3 mois avant ouverture. Objectif : 80 à 100 membres fondateurs avec tarif préférentiel (−15\%). Crée un effet de communauté immédiat à J+1.
+  \item \textbf{Marketing local :} Réseaux sociaux (Instagram, TikTok), flyers dans les clubs CrossFit et gymnases environnants, partenariats avec les écoles primaires et collèges pour le segment kids.
+  \item \textbf{Bouche-à-oreille :} Le meilleur levier dans ce secteur. Les cours de qualité + l'ambiance = recommandations naturelles. Encourager via parrainage (1 mois offert pour tout membre parrainé).
+  \item \textbf{B2B \& groupes :} Démarche active auprès des comités d'entreprise locaux, agences d'événementiel, centres de loisirs. Créneaux exclusifs weekends et soirées.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Investissement initial}
+\eyebrow{05 — INVESTISSEMENT}
+
+L'investissement initial couvre l'aménagement du local, les équipements sportifs et lifestyle, le fonds de roulement des premiers mois et les coûts de lancement. La fourchette retenue est de 150 000 à 300 000 €, selon le niveau de finition choisi et l'état du local trouvé.
+
+\begin{center}
+\begin{tabular}{@{}p{6.5cm}p{2cm}p{4cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Poste} & \color{white}\textbf{\% budget} & \color{white}\textbf{Fourchette (200k€ base)} \\
+\midrule
+Aménagement \& travaux & \redcell{30\%} & 55 000–75 000 € \\
+\rowcolor{fc-bg2} Équipements combat (sacs, ring, tatamis, cages) & \redcell{25\%} & 45 000–60 000 € \\
+Mobilier \& équipement coffee shop & \goldcell{10\%} & 18 000–25 000 € \\
+\rowcolor{fc-bg2} Systèmes (POS, logiciel salle, sécurité) & 5\% & 8 000–12 000 € \\
+Fonds de roulement (5 mois de charges) & 20\% & 60 000–90 000 € \\
+\rowcolor{fc-bg2} Marketing \& pré-lancement & 7\% & 12 000–18 000 € \\
+Frais juridiques, comptabilité, divers & 3\% & 5 000–8 000 € \\
+\midrule
+\textbf{Total investissement capex} & \textbf{100\%} & \textbf{203 000–288 000 €} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Besoin total de financement}
+
+\begin{warnbox}
+\textbf{Besoin total de financement : 280 000 – 300 000 €}\\
+Investissement capex (220k€ scénario médian) + pertes d'exploitation An 1 estimées (60–70k€) + buffer de sécurité (10–15k€). \textbf{Ne pas lancer le projet en dessous de ce seuil.} Un sous-financement initial est la première cause d'échec sur ce type de concept.
+\end{warnbox}
+
+\subsection{Hypothèses de financement}
+
+\begin{itemize}
+  \item \textbf{Apport en fonds propres :} 30 à 40\% minimum recommandé — soit 85 000 à 120 000 €. En dessous, le projet est trop exposé aux aléas des premiers mois.
+  \item \textbf{Emprunt bancaire :} Prêt professionnel sur 5 à 7 ans. Taux actuel 4,5–6\% selon garanties. Mensualité estimée : 2 500 à 4 500 €/mois selon montant.
+  \item \textbf{Dispositifs d'aide :} ACRE (exonération charges 1ère année), prêt d'honneur Réseau Entreprendre ou Initiative France, aides Région Bretagne à l'innovation et au tourisme sportif.
+  \item \textbf{Investisseurs privés :} Business angels, love money, ou actionnariat partiel. À structurer en SAS avec pacte d'associés si ouverture du capital.
+\end{itemize}
+
+\subsection{Note à l'attention des investisseurs}
+
+La rentabilité du site de Pleurtuit (8–12\% de marge nette en An 3) est réelle mais modeste. \textbf{La valeur du projet pour un investisseur réside dans la duplication} — Phase 2 vers Saint-Malo et Dinard (sites urbains distincts dans la zone de chalandise élargie), Phase 3 vers un réseau national franchisé. Le site pilote est le proof of concept qui déclenche la mise à l'échelle. C'est un investissement dans un concept scalable, pas dans un lieu unique.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Structure des charges fixes}
+\eyebrow{06 — CHARGES}
+
+Les charges fixes mensuelles sont estimées entre 16 000 € et 22 000 € selon le loyer et la masse salariale. Le seuil de rentabilité opérationnel se situe entre 16 000 € et 22 000 € de chiffre d'affaires mensuel — atteignable dès 130 à 160 membres actifs.
+
+\begin{center}
+\begin{tabular}{@{}p{6cm}p{3cm}p{3cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Poste de charge} & \color{white}\textbf{Mensuel} & \color{white}\textbf{Annuel} \\
+\midrule
+Loyer + charges (15–20 €/m² · 350 m²) & 5 250–7 000 € & 63 000–84 000 € \\
+\rowcolor{fc-bg2} Masse salariale brute (1,5 coachs + 1 barista + gérant partiel) & 6 000–8 500 € & 72 000–102 000 € \\
+Approvisionnement coffee \& snacking & 1 500–2 500 € & 18 000–30 000 € \\
+\rowcolor{fc-bg2} Assurances (RC Pro, multirisque, sportive) & 400–600 € & 4 800–7 200 € \\
+Logiciels (POS, gestion salle, compta) & 250–400 € & 3 000–4 800 € \\
+\rowcolor{fc-bg2} Marketing \& communication courante & 400–800 € & 4 800–9 600 € \\
+Entretien, petits équipements, consommables & 500–800 € & 6 000–9 600 € \\
+\rowcolor{fc-bg2} Énergie (électricité, eau, internet) & 600–900 € & 7 200–10 800 € \\
+Comptabilité \& frais bancaires & 300–500 € & 3 600–6 000 € \\
+\midrule
+\textbf{Total charges fixes} & \textbf{15 200–22 000 €} & \textbf{182 400–264 000 €} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Notes sur les charges variables}
+
+\begin{itemize}
+  \item COGS coffee \& snacking : \textasciitilde35\% du CA F\&B (marge brute \textasciitilde65\%).
+  \item COGS boutique \& merch : \textasciitilde40–45\% du CA retail (marge brute \textasciitilde55\%).
+  \item Commissions partenaires / affiliés : 5–8\% sur certaines ventes équipements.
+  \item Coûts événementiels variables : ringside, figurants, communication fight nights — \textasciitilde30\% du CA événementiel.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Prévisionnel des revenus — 3 ans}
+\eyebrow{07 — PRÉVISIONNEL REVENUS}
+
+Le prévisionnel ci-dessous est établi sur le scénario cible (200 membres fin An 1, panier moyen 130 €/mois tous flux confondus). Les colonnes An 2 et An 3 intègrent une croissance des abonnements de 20\%/an et une montée en puissance des flux lifestyle et événementiels.
+
+\begin{center}
+\begin{tabular}{@{}p{5.5cm}p{1.5cm}p{2.2cm}p{2.2cm}p{2.2cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Flux de revenus} & \color{white}\textbf{\% CA} & \color{white}\textbf{An 1} & \color{white}\textbf{An 2} & \color{white}\textbf{An 3} \\
+\midrule
+Abonnements sport (adultes) & \redcell{29\%} & 90 k€ & 125 k€ & 170 k€ \\
+\rowcolor{fc-bg2} Coaching privé & \redcell{13\%} & 40 k€ & 56 k€ & 76 k€ \\
+Cours semi-collectifs & 8\% & 25 k€ & 34 k€ & 46 k€ \\
+\rowcolor{fc-bg2} Cours enfants \& ados & 8\% & 24 k€ & 34 k€ & 47 k€ \\
+Coffee shop & \goldcell{15\%} & 47 k€ & 63 k€ & 87 k€ \\
+\rowcolor{fc-bg2} Snacking premium & 8\% & 25 k€ & 34 k€ & 46 k€ \\
+Boutique \& merch & 5\% & 16 k€ & 22 k€ & 32 k€ \\
+\rowcolor{fc-bg2} B2B \& privatisation & 7\% & 22 k€ & 35 k€ & 46 k€ \\
+Événements \& fight nights & 6\% & 17 k€ & 21 k€ & 22 k€ \\
+\midrule
+\textbf{Total CA (scénario cible)} & \textbf{100\%} & \textbf{\textasciitilde310 k€} & \textbf{\textasciitilde430 k€} & \textbf{\textasciitilde580 k€} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Montée en charge — calendrier mensuel An 1}
+
+La courbe de montée en charge est critique pour la trésorerie. Le modèle suivant est établi sur une base de 200 membres en fin d'année, avec un pré-lancement actif.
+
+\begin{center}
+\begin{tabular}{@{}p{2.8cm}p{2.5cm}p{2.5cm}p{2.5cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{M1–M2 (Pré-ouv.)} & \color{white}\textbf{M3–M4 (Lancement)} & \color{white}\textbf{M5–M7} & \color{white}\textbf{M8–M10} & \color{white}\textbf{M11–M12} \\
+\midrule
+Pré-vente 80–100 mbr & Ouverture 100 mbr & 130 mbr + Coffee & 160 mbr + B2B & \redcell{200 mbr ★ Cible} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Compte de résultat prévisionnel}
+\eyebrow{08 — COMPTE DE RÉSULTAT}
+
+\begin{center}
+\begin{tabular}{@{}p{6.5cm}p{2.5cm}p{2.5cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Ligne} & \color{white}\textbf{An 1} & \color{white}\textbf{An 2} & \color{white}\textbf{An 3} \\
+\midrule
+\textbf{Chiffre d'affaires total} & \redcell{310 000 €} & \redcell{430 000 €} & \redcell{580 000 €} \\
+\rowcolor{fc-bg2} dont Sport (57\%) & 183 000 € & 255 000 € & 347 000 € \\
+dont Lifestyle F\&B + Boutique (28\%) & 88 000 € & 119 000 € & 165 000 € \\
+\rowcolor{fc-bg2} dont Événementiel \& B2B (15\%) & 39 000 € & 56 000 € & 68 000 € \\
+— Coût des ventes (COGS, \textasciitilde28\%) & –87 000 € & –120 000 € & –162 000 € \\
+\midrule
+\textbf{= Marge brute} & \textbf{223 000 €} & \textbf{310 000 €} & \textbf{418 000 €} \\
+\rowcolor{fc-bg2} Taux de marge brute & 72\% & 72\% & 72\% \\
+— Charges fixes (loyer, salaires, etc.) & –200 000 € & –235 000 € & –275 000 € \\
+\rowcolor{fc-bg2} — Amortissements (sur 5 ans, base 220k€) & –44 000 € & –44 000 € & –44 000 € \\
+\midrule
+\textbf{= Résultat d'exploitation (REX)} & \textbf{–21 000 €} & \textbf{31 000 €} & \textbf{99 000 €} \\
+\rowcolor{fc-bg2} Taux REX & –7\% & 7\% & 17\% \\
+— Charges financières (emprunt) & –42 000 € & –38 000 € & –34 000 € \\
+\rowcolor{fc-bg2} = Résultat avant impôt & –63 000 € & –7 000 € & 65 000 € \\
+— IS (25\%) & 0 € & 0 € & –16 000 € \\
+\midrule
+\textbf{= Résultat net} & \textbf{–63 000 €} & \textbf{–7 000 €} & \textbf{49 000 €} \\
+\rowcolor{fc-bg2} Marge nette & –20\% & –2\% & 8\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+{\small\color{fc-ink3}\textit{Note : la perte en An 1 (–63 k€) et la quasi-neutralité An 2 (–7 k€) sont inhérentes à la phase de démarrage avec une tarification réaliste adaptée au marché semi-rural breton. Les charges salariales An 1 intègrent 1,5 coachs équivalent temps partiel + 1 barista + rémunération partielle du gérant. La montée en charge salariale An 2–3 intègre 1 coach supplémentaire et un responsable opérationnel.}}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Plan de trésorerie \& seuil de rentabilité}
+\eyebrow{09 — TRÉSORERIE \& SEUIL}
+
+\subsection{Seuil de rentabilité opérationnel}
+
+Le point mort opérationnel est atteint lorsque la marge brute couvre les charges fixes. Sur la base d'une marge brute de 72\% et de charges fixes de 16 700 €/mois (An 1) :
+
+\begin{center}
+\begin{tabular}{@{}p{8cm}p{4.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Calcul} & \color{white}\textbf{Valeur} \\
+\midrule
+CA mensuel nécessaire (point mort) & \redcell{\textasciitilde25 000 €/mois} \\
+\rowcolor{fc-bg2} En nombre de membres (panier 130 €) & \redcell{\textasciitilde150 membres} \\
+En \% de la capacité cible An 1 (200 mbr) & \textasciitilde75\% \\
+\rowcolor{fc-bg2} Mois estimé d'atteinte (scénario cible) & \redcell{M14–M16 après ouverture} \\
+Mois estimé d'atteinte (scénario dynamique) & M10–M12 après ouverture \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Plan de trésorerie — An 1 (trimestriel)}
+
+\begin{center}
+\begin{tabular}{@{}p{5.5cm}p{2cm}p{2cm}p{2cm}p{2cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Ligne} & \color{white}\textbf{T1} & \color{white}\textbf{T2} & \color{white}\textbf{T3} & \color{white}\textbf{T4} \\
+\midrule
+Encaissements (CA) & 45 000 € & 72 000 € & 90 000 € & 103 000 € \\
+\rowcolor{fc-bg2} Décaissements charges fixes & –50 000 € & –50 000 € & –52 000 € & –54 000 € \\
+COGS variables & –15 000 € & –25 000 € & –31 000 € & –35 000 € \\
+\rowcolor{fc-bg2} Investissement initial & \redcell{–220 000 €} & 0 € & 0 € & 0 € \\
+Remboursement emprunt & –9 000 € & –9 000 € & –9 000 € & –9 000 € \\
+\midrule
+\textbf{Flux net de trésorerie} & \redcell{–249 000 €} & \redcell{–12 000 €} & 8 000 € & 22 000 € \\
+\rowcolor{fc-bg2} \textbf{Trésorerie cumulée} & \redcell{–249 000 €} & \redcell{–261 000 €} & \redcell{–253 000 €} & \redcell{–231 000 €} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+{\small\color{fc-ink3}\textit{Note : la trésorerie redevient positive au cours de l'An 2 dans le scénario cible (vers M18). Le financement initial (fonds propres + emprunt) doit couvrir le pic négatif de T1. Un fonds de roulement de 5 mois de charges (environ 90 000 €) est intégré au budget d'investissement.}}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Scénarios \& sensibilité}
+\eyebrow{10 — SCÉNARIOS}
+
+Trois scénarios sont modélisés pour encadrer les décisions. Le scénario cible est celui retenu pour le pilotage. Les scénarios prudent et dynamique servent de bornes de sensibilité.
+
+\begin{center}
+\begin{tabular}{@{}p{3.5cm}p{2.6cm}p{2.6cm}p{2.6cm}p{2.6cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Indicateur} & \color{white}\textbf{⚠ Stress test} & \color{white}\textbf{Prudent} & \color{white}\textbf{Cible ★} & \color{white}\textbf{Dynamique} \\
+\midrule
+Membres fin An 1 & 160 & 150 & \redcell{200} & 280 \\
+\rowcolor{fc-bg2} Panier moyen / mois & 110 € & 90 € & \redcell{130 €} & 170 € \\
+CA Année 1 & \textasciitilde210 k€ & \textasciitilde200 k€ & \redcell{\textasciitilde310 k€} & \textasciitilde450 k€ \\
+\rowcolor{fc-bg2} CA Année 3 & \textasciitilde390 k€ & \textasciitilde380 k€ & \redcell{\textasciitilde580 k€} & \textasciitilde840 k€ \\
+Marge nette An 3 & 2–5\% & 3–6\% & \redcell{8–12\%} & 16–22\% \\
+\rowcolor{fc-bg2} Break-even & 36–42 mois & 42–54 mois & \redcell{24–30 mois} & 14–18 mois \\
+Perte An 1 & \textcolor{fc-red}{–90 k€} & \textcolor{fc-red}{–75 k€} & \redcell{–63 k€} & –20 k€ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+{\small\color{fc-ink3}\textit{⚠ Stress test : montée en charge plus lente que prévue (retard travaux, été creux, recrutement difficile). Gérable si le financement initial de 280–300 k€ est sécurisé. Le scénario prudent reste la base de décision opérationnelle.}}
+
+\subsection{Hypothèses différenciantes par scénario}
+
+\textbf{Scénario prudent :} Pas de pré-lancement structuré. Montée en charge progressive sur 18 mois. Pas d'effet saisonnier exploité. Boutique non activée en An 1. Coffee shop sous-performant (zone non touristique hors saison).
+
+\textbf{Scénario cible ★ :} Pré-vente 80–100 membres fondateurs. Snacking et boutique actifs dès J1. Offre B2B ciblée. Fight night mensuel dès M6. Partenariats RDX Sports et RVCA actifs.
+
+\textbf{Scénario dynamique :} Pré-vente 120+ membres. Effet été pleinement exploité (tourisme côtier +40\%). Fighter in Residence dès An 1. Studio contenu actif. Partenariat RVCA avec visibilité nationale.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Roadmap \& jalons}
+\eyebrow{11 — ROADMAP}
+
+\subsection{Phase 1 · M-3 à M0 — Pré-lancement}
+\begin{itemize}
+  \item Finalisation structure juridique (SAS / SARL)
+  \item Signature du bail commercial
+  \item Lancement réseaux sociaux \& campagne pré-inscription
+  \item Démarche partenariats (RDX Sports, RVCA, CE locaux)
+  \item Recrutement 2 coachs titulaires (BPJEPS minimum)
+  \item Aménagement \& travaux du local (durée 6–8 semaines)
+  \item Formation barista \& mise en place coffee shop
+  \item \textbf{Objectif : 80–100 membres fondateurs avant J1}
+\end{itemize}
+
+\subsection{Phase 2 · M1 à M6 — Lancement}
+\begin{itemize}
+  \item Ouverture publique : combat + coffee + snacking + boutique
+  \item Cours adultes 5 jours/semaine · cours kids 3 jours/semaine
+  \item Offre B2B activée : premier contact CE \& agences événementielles
+  \item Planning fight nights : premier événement M4
+  \item \textbf{Objectif : 160 membres en fin de Phase 2}
+\end{itemize}
+
+\subsection{Phase 3 · M6 à M18 — Croissance}
+\begin{itemize}
+  \item Activation module Recovery (sauna + ice bath)
+  \item Premier Fighter in Residence · masterclass + media day
+  \item Développement studio contenu (photo/vidéo)
+  \item Programme compétition kids : tournois internes + régionaux
+  \item \textbf{Objectif : 200 membres · seuil de rentabilité atteint}
+\end{itemize}
+
+\subsection{Phase 4 · M18+ — Expansion}
+\begin{itemize}
+  \item Ouverture d'un second site côtier (Saint-Malo ou Dinard — duplication du modèle dans la zone de chalandise élargie)
+  \item Développement de la marque nationale (merch, digital)
+  \item Franchise ou licensing : déploiement du modèle
+  \item \textbf{Objectif : 320+ membres · CA annuel 720 k€}
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Facteurs clés de succès \& risques}
+\eyebrow{12 — FACTEURS CLÉS \& RISQUES}
+
+\subsection{Facteurs clés de succès}
+
+\textbf{1. Branding \& identité forte :} FightCoffee doit être reconnaissable immédiatement. L'identité visuelle, le naming, le merch et la présence digitale sont des investissements prioritaires dès le pré-lancement.
+
+\textbf{2. Qualité pédagogique :} Les coachs sont l'actif principal. Un mauvais recrutement détruit la réputation en quelques semaines. Profils : BPJEPS + compétition + pédagogie débutants.
+
+\textbf{3. Pré-lancement structuré :} Les membres fondateurs créent l'élan et la preuve sociale. Sans pré-lancement, la montée en charge est plus lente et la trésorerie plus tendue.
+
+\textbf{4. Offre kids bien exécutée :} Le segment enfants / ados génère un double revenu (cours + café parents) et des membres long terme. Il nécessite un encadrement irréprochable et des certifications spécifiques.
+
+\textbf{5. Expérience \& atmosphère :} L'ambiance du lieu est le produit autant que les cours. Musique, éclairage, odeur du café, signalétique, propreté : chaque détail compte.
+
+\subsection{Risques identifiés \& mitigation}
+
+\begin{center}
+\begin{tabular}{@{}p{4.5cm}p{2cm}p{6cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Risque} & \color{white}\textbf{Niveau} & \color{white}\textbf{Mitigation} \\
+\midrule
+Montée en charge trop lente & \goldcell{MODÉRÉ} & Pré-lancement actif. Offre B2B dès J1. Tarif fondateur limité dans le temps. \\
+\rowcolor{fc-bg2} Loyer trop élevé / local inadapté & \redcell{ÉLEVÉ} & Analyse rigoureuse avant signature. Négocier franchise de loyer 3–6 mois. Clause de sortie. \\
+Départ d'un coach clé & \goldcell{MODÉRÉ} & 2 coachs minimum par discipline principale. Contrat avec clause de non-concurrence. \\
+\rowcolor{fc-bg2} Sous-performance coffee shop & \textcolor{green!60!black}{FAIBLE} & Barista formé dès J1. Offre simple et sans cuisine lourde. Réajustement tarifs rapide. \\
+Saisonnalité (creux hiver) & \goldcell{MODÉRÉ} & Stages vacances, offre B2B en creux, fight nights pour animer. Abonnements annuels. \\
+\rowcolor{fc-bg2} Sensibilité prix clientèle locale & \goldcell{MODÉRÉ} & Tarification révisée (–15 à –20\% vs plan initial). Offre Essentiel 85 € accessible. \\
+Entrée d'un concurrent lifestyle & \textcolor{green!60!black}{FAIBLE (3 ans)} & Avance à l'allumage. Communauté = barrière à l'entrée. Marque forte dès An 1. \\
+\rowcolor{fc-bg2} Réglementation ERP / sécurité & \goldcell{MODÉRÉ} & Conformité ERP type S dès l'aménagement. Accompagnement par cabinet spécialisé. \\
+Licence boissons (offre soir) & \textcolor{green!60!black}{FAIBLE} & Licence III (boissons fermentées : bières, vins, cidres) — simple déclaration en mairie, sans transfert requis. Licence IV délibérément évitée. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{16pt}
+\begin{center}
+\small\color{fc-ink3} FIGHTCOFFEE — Document confidentiel — Usage interne uniquement\\
+\color{fc-red} contact@fightcoffee.fr · fightcoffee.fr\quad\color{fc-ink3}·\quad Pleurtuit, Bretagne
+\end{center}
+
+\end{document}

@@ -1,0 +1,553 @@
+% ─────────────────────────────────────────────────────────────────────────────
+%  FIGHTCOFFEE — Annexe Opérationnelle v2.3 (analyse financière approfondie mars 2026)
+%  Compilé avec xelatex
+% ─────────────────────────────────────────────────────────────────────────────
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{french}
+\usepackage{geometry}
+\geometry{top=2.2cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\usepackage{xcolor}
+\definecolor{fc-red}{HTML}{C8241A}
+\definecolor{fc-gold}{HTML}{9A7A2E}
+\definecolor{fc-ink}{HTML}{181614}
+\definecolor{fc-ink2}{HTML}{4A4540}
+\definecolor{fc-ink3}{HTML}{8A847A}
+\definecolor{fc-bg2}{HTML}{F0EDE7}
+\definecolor{fc-rule}{HTML}{D8D4CC}
+\definecolor{fc-warn}{HTML}{FEF3E2}
+\definecolor{fc-warn-border}{HTML}{D97706}
+\definecolor{fc-tip}{HTML}{EFF6FF}
+\definecolor{fc-tip-border}{HTML}{9A7A2E}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=fc-red,
+  urlcolor=fc-red,
+  pdfauthor={FightCoffee},
+  pdftitle={FightCoffee — Annexe Opérationnelle 2026}
+}
+
+% ── Fonts ────────────────────────────────────────────────────────────────────
+\setmainfont{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+% ── Section styles ───────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\Large\bfseries\color{fc-ink}}
+  {\color{fc-red}\Alph{section}.}{0.6em}{}[\vspace{-4pt}\color{fc-rule}\rule{\textwidth}{0.6pt}]
+\renewcommand{\thesection}{\Alph{section}}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{fc-red}}
+  {}{0em}{}
+
+\titlespacing{\section}{0pt}{20pt}{8pt}
+\titlespacing{\subsection}{0pt}{12pt}{4pt}
+
+% ── Header / Footer ──────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{fc-red}\textbf{FIGHTCOFFEE} \color{fc-ink3}— Annexe Opérationnelle · Confidentiel}
+\fancyfoot[C]{\small\color{fc-ink3}Page \thepage\ · FightCoffee — Usage interne uniquement}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{fc-rule}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrulewidth}{0pt}
+
+% ── Boxes ────────────────────────────────────────────────────────────────────
+\newtcolorbox{warnbox}{
+  colback=fc-warn, colframe=fc-warn-border,
+  leftrule=3pt, toprule=0pt, bottomrule=0pt, rightrule=0pt,
+  boxsep=4pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fontupper=\small\color{fc-ink2}
+}
+\newtcolorbox{tipbox}{
+  colback=fc-tip, colframe=fc-tip-border,
+  leftrule=3pt, toprule=0pt, bottomrule=0pt, rightrule=0pt,
+  boxsep=4pt, left=6pt, right=6pt, top=5pt, bottom=5pt,
+  fontupper=\small\color{fc-ink2}
+}
+
+% ── Helpers ──────────────────────────────────────────────────────────────────
+\newcommand{\eyebrow}[1]{%
+  \vspace{4pt}{\small\color{fc-ink3}\texttt{— #1}}\vspace{2pt}
+}
+\newcommand{\redcell}[1]{\textcolor{fc-red}{\textbf{#1}}}
+\newcommand{\goldcell}[1]{\textcolor{fc-gold}{\textbf{#1}}}
+\newcommand{\negnum}[1]{\textcolor{fc-red}{#1}}
+\newcommand{\posnum}[1]{\textcolor{green!60!black}{#1}}
+
+\setlist[itemize]{leftmargin=1.4em, itemsep=2pt, topsep=4pt}
+\renewcommand{\labelitemi}{\color{fc-ink3}–}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── TITLE PAGE ───────────────────────────────────────────────────────────────
+\thispagestyle{empty}
+\vspace*{3cm}
+\begin{center}
+  {\fontsize{48}{52}\selectfont\bfseries\color{fc-ink} FIGHT}\\[2pt]
+  {\fontsize{48}{52}\selectfont\bfseries\color{fc-red} COFFEE}\\[12pt]
+  {\large\color{fc-ink3}\texttt{HYBRID COMBAT \& LIFESTYLE HUB}}\\[40pt]
+  \color{fc-rule}\rule{10cm}{0.6pt}\\[24pt]
+  {\Large\bfseries\color{fc-ink} ANNEXE OPÉRATIONNELLE}\\[10pt]
+  {\normalsize\color{fc-ink2} Structure juridique · Plan RH · Bail commercial · Trésorerie mensuelle · Marketing}\\[6pt]
+  {\normalsize\color{fc-ink2} SAS FightCoffee — 2 associés 50/50 — Pleurtuit (35730)}\\[40pt]
+  \color{fc-rule}\rule{10cm}{0.6pt}\\[20pt]
+  {\small\color{fc-ink3} Document confidentiel — v2.3 · Mars 2026 · Usage interne uniquement}
+\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Structure juridique — SAS \& Pacte d'associés}
+\eyebrow{A — STRUCTURE JURIDIQUE}
+
+\subsection{Pourquoi la SAS est le bon choix}
+
+La SAS est la forme juridique la plus adaptée à FightCoffee pour trois raisons majeures : liberté contractuelle totale pour organiser le pouvoir entre deux fondateurs à 50/50, facilité d'entrée future d'investisseurs ou de partenaires au capital, et régime social du Président (assimilé salarié) offrant une meilleure protection sociale que le gérant de SARL.
+
+Le montage 50/50 est le plus délicat qui soit — il exige un pacte d'associés solide pour éviter les blocages décisionnels. Mais il est aussi le plus équilibré et le plus juste quand les deux fondateurs apportent des compétences complémentaires d'égale valeur.
+
+\begin{center}
+\begin{tabular}{@{}p{4cm}p{5cm}p{4cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Critère} & \color{white}\textbf{SAS ★ Recommandée} & \color{white}\textbf{SARL} \\
+\midrule
+Liberté statutaire & Totale — tout est personnalisable & Encadrée par la loi \\
+\rowcolor{fc-bg2} Dirigeant & Président (assimilé salarié) & Gérant (TNS — protection moindre) \\
+Protection sociale fondateur & Sécurité sociale + retraite complémentaire & RSI — moins protecteur \\
+\rowcolor{fc-bg2} Entrée d'investisseurs & Simple — émission d'actions, BSPCE & Complexe — agrément associés \\
+Cession de titres & Libre (sauf clause d'agrément) & Agrément associés obligatoire \\
+\rowcolor{fc-bg2} Pacte d'associés & Très courant et efficace & Moins adapté \\
+Rémunération dirigeant & Bulletin de salaire — URSSAF & Rémunération gérance — impôts \\
+\rowcolor{fc-bg2} IS / Dividendes & IS 15\% sur 0–42k€ puis 25\% · PFU 30\% & Identique SAS \\
+Coût de création & \textasciitilde1 500–3 000€ avec avocat & \textasciitilde800–1 500€ \\
+\rowcolor{fc-bg2} Recommandé pour FightCoffee & \posnum{✓ Oui — flexibilité, investisseurs, pacte 50/50} & \negnum{✗ Non — trop rigide} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Étapes de création de la SAS}
+
+\textbf{1. Rédaction des statuts :} Par un avocat spécialisé en droit des sociétés ou un expert-comptable. Coût : 1 500–3 000€. Prévoir 2–3 semaines. Les statuts fixent : objet social, capital, répartition des actions, pouvoirs du Président.
+
+\textbf{2. Dépôt du capital :} Sur un compte bloqué ouvert au nom de la SAS en formation. Minimum conseillé : 10 000€ (libération de 50\% à la création, soit 5 000€, solde sur appel).
+
+\textbf{3. Publication au JAL :} Annonce légale dans un Journal d'Annonces Légales de Bretagne. Coût : 180–250€. Obligatoire avant immatriculation.
+
+\textbf{4. Immatriculation au RCS :} Via le Guichet Unique (inpi.fr) depuis 2023. Délai : 3–10 jours ouvrés. Coût : \textasciitilde37€ de frais de greffe.
+
+\textbf{5. Ouverture compte professionnel :} Dès réception du Kbis. Banque en ligne (Qonto, Shine, Revolut Business) ou banque traditionnelle.
+
+\textbf{6. Signature du pacte d'associés :} Concomitamment aux statuts ou dans les jours qui suivent. Document distinct des statuts, confidentiel, signé par les deux associés.
+
+\begin{warnbox}
+⚠ La création sans avocat est possible mais risquée en cas de 50/50. Un pacte mal rédigé peut bloquer la société en cas de désaccord. Budget minimum recommandé : 2 500€ pour les deux documents.
+\end{warnbox}
+
+\begin{tipbox}
+→ Banques recommandées pour une SAS sport : Qonto (digital, simple), BNP Paribas (réseau local fort en Bretagne), Crédit Agricole Ille-et-Vilaine (actif sur le financement de projets sportifs).
+\end{tipbox}
+
+\subsection{Pacte d'associés — Clauses essentielles 50/50}
+
+Le pacte d'associés est le document le plus important de votre relation. Il anticipe tous les cas de figure conflictuels et définit les règles du jeu avant que les problèmes n'arrivent. En 50/50, la clause de deadlock est absolument critique.
+
+\begin{center}
+\begin{tabular}{@{}p{4cm}p{9cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Clause} & \color{white}\textbf{Contenu recommandé pour FightCoffee 50/50} \\
+\midrule
+Répartition du capital & 50\% / 50\% entre les deux fondateurs. Capital minimum recommandé : 10 000€. \\
+\rowcolor{fc-bg2} Valorisation des apports & Apport en numéraire + valorisation des apports en industrie (compétences, réseau, temps). \\
+Clause d'inaliénabilité & Interdiction de céder ses actions pendant 3 ans sans accord de l'autre associé. \\
+\rowcolor{fc-bg2} Droit de préemption & En cas de cession, l'autre associé a un droit de rachat prioritaire aux mêmes conditions. \\
+Clause d'agrément & Toute entrée d'un tiers au capital doit être approuvée par les deux associés. \\
+\rowcolor{fc-bg2} Drag-along & Si un tiers offre d'acheter 100\% de la SAS, un associé peut forcer l'autre à vendre aussi. \\
+Tag-along & Si un associé cède ses parts, l'autre peut exiger d'être inclus dans la vente aux mêmes conditions. \\
+\rowcolor{fc-bg2} Clause de deadlock & En cas de blocage décisionnel (vote 50/50 impossible) : médiation → rachat forcé → dissolution. \textbf{CRITIQUE en 50/50.} \\
+Gouvernance \& votes & Décisions ordinaires (majorité simple) vs extraordinaires (unanimité). Ex : tout investissement >20k€ = accord des deux. \\
+\rowcolor{fc-bg2} Rémunération fondateurs & Principe de rémunération progressive : 0 ou SMIC les 6 premiers mois, révision selon objectifs. \\
+Non-concurrence & Chaque fondateur s'interdit d'exploiter un concept similaire dans un rayon de 50 km pendant 2 ans après sa sortie. \\
+\rowcolor{fc-bg2} Confidentialité & Clause de confidentialité sur les données financières, les partenariats et la stratégie. Durée : 5 ans. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{warnbox}
+⚠ Clause de deadlock : sans cette clause, un désaccord en 50/50 peut bloquer la société indéfiniment et forcer une dissolution judiciaire coûteuse. Définir impérativement la procédure (médiation → rachat forcé à une valeur prédéfinie → dissolution).
+\end{warnbox}
+
+\begin{tipbox}
+→ Recommandation : faire rédiger le pacte par un avocat spécialisé (Cabinet Fidal, Capstan ou avocat local en droit des affaires à Saint-Malo / Rennes). Budget : 1 000–2 000€ en plus des statuts.
+\end{tipbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Fiscalité \& rémunération des fondateurs}
+\eyebrow{B — FISCALITÉ \& RÉMUNÉRATION}
+
+\subsection{Fiscalité de la SAS FightCoffee}
+
+La SAS est soumise de plein droit à l'Impôt sur les Sociétés (IS). Les bénéfices sont taxés au niveau de la société avant toute distribution. Les fondateurs ne sont imposés à titre personnel que sur leurs salaires (IR) et les dividendes qu'ils se versent (PFU 30\%).
+
+\begin{center}
+\begin{tabular}{@{}p{3.5cm}p{4.5cm}p{5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Paramètre} & \color{white}\textbf{Détail} & \color{white}\textbf{Impact FightCoffee} \\
+\midrule
+IS taux réduit & 15\% sur les 42 500 premiers € de bénéfice & Applicable dès An 2 (An 1 = perte légère) \\
+\rowcolor{fc-bg2} IS taux normal & 25\% au-delà de 42 500€ de bénéfice & S'applique sur la majorité du résultat An 3 \\
+Dividendes (PFU) & Flat tax 30\% (12,8\% IR + 17,2\% PS) & Levier de rémunération après IS — An 2+ \\
+\rowcolor{fc-bg2} Rémunération président & Charges salariales \textasciitilde75–80\% du brut & Sur 3 000€ net/mois : coût total \textasciitilde5 400€/mois \\
+ACRE (1ère année) & Exonération partielle cotisations sociales & Économie 2 000–4 000€ sur l'année \\
+\rowcolor{fc-bg2} TVA & Régime réel normal (CA > 91 900€ services) & Déclarations mensuelles ou trimestrielles \\
+Exonération sport & Les cours de sport peuvent être exonérés de TVA (agrément préfectoral) & À étudier — peut générer 10–15k€/an d'économie \\
+\rowcolor{fc-bg2} CFE & Taxe locale due dès la 1ère année & Prévoir 1 500–3 000€/an selon surface \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tipbox}
+→ Action prioritaire : demander l'exonération de TVA sur les cours de sport auprès de la DRJSCS dès la création. Si accordée, économie de 10–15k€/an sur le CA sport. L'expert-comptable gère la demande.
+\end{tipbox}
+
+\begin{warnbox}
+⚠ La TVA sur les abonnements de salle de sport est un sujet complexe — certaines structures obtiennent une exonération partielle, d'autres pas. Ne pas supposer l'exonération dans le prévisionnel sans validation.
+\end{warnbox}
+
+\subsection{Plan de rémunération des fondateurs}
+
+La rémunération des fondateurs est un levier critique : trop élevée trop tôt, elle plombe la trésorerie et crée une charge fixe difficile à réduire. Trop basse trop longtemps, elle crée des tensions et des risques personnels. Le tableau ci-dessous fixe un plan progressif lié aux objectifs.
+
+\begin{center}
+\begin{tabular}{@{}p{3.2cm}p{2.4cm}p{2.4cm}p{2.8cm}p{3.2cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Période} & \color{white}\textbf{Salaire net/mois} & \color{white}\textbf{Coût SAS/mois} & \color{white}\textbf{Coût SAS/an} & \color{white}\textbf{Condition déclenchante} \\
+\midrule
+M1 à M6 (lancement) & \redcell{0 – 800 €} & 0 – 1 440 € & 0 – 17 280 € & Toujours — sacrifice fondateur \\
+\rowcolor{fc-bg2} M7 à M12 (montée) & 1 200 – 1 800 € & 2 160 – 3 240 € & 25 920 – 38 880 € & > 140 membres actifs \\
+An 2 (stabilisation) & 2 000 – 2 800 € & 3 600 – 5 040 € & 43 200 – 60 480 € & > 200 membres · tréso positive \\
+\rowcolor{fc-bg2} An 3 (croissance) & 3 000 – 4 000 € & 5 400 – 7 200 € & 64 800 – 86 400 € & > 280 membres · marge nette > 10\% \\
+Dividendes (An 2+) & Variable & PFU 30\% sur montant brut & À décider en AG & Résultat net positif · décision unanime associés \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Principe clé :} Les deux fondateurs ont la même rémunération à chaque étape. Toute asymétrie doit être définie dans le pacte d'associés avec une justification documentée.
+
+\textbf{Frais professionnels :} En complément du salaire, les fondateurs peuvent se faire rembourser les frais réels sur justificatifs : déplacements, repas professionnels, matériel.
+
+\begin{warnbox}
+⚠ Ne jamais se verser des dividendes avant qu'un expert-comptable ait validé que la SAS dispose de réserves distribuables suffisantes et que la trésorerie le permet.
+\end{warnbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Plan RH — Profils, certifications, coûts}
+\eyebrow{C — PLAN RH}
+
+\subsection{Tableau des recrutements}
+
+Le plan RH est structuré en deux vagues : les recrutements J1 (indispensables à l'ouverture) et les recrutements de croissance (An 2). Le coût total employeur intègre les charges patronales estimées à \textasciitilde45\% du brut pour un salarié au régime général.
+
+\begin{center}
+\begin{tabular}{@{}p{3cm}p{1.5cm}p{2.5cm}p{2cm}p{2cm}p{1.8cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Poste} & \color{white}\textbf{Quand} & \color{white}\textbf{Certif. requise} & \color{white}\textbf{Brut/mois} & \color{white}\textbf{Coût SAS} & \color{white}\textbf{Priorité} \\
+\midrule
+Coach MMA / Luta Livre & J1 ouverture & BPJEPS AGFF ou CQP MMA & \redcell{2 000–2 500€} & 3 600–4 500€ & \redcell{CRITIQUE} \\
+\rowcolor{fc-bg2} Coach Boxe / Muay Thaï & J1 ouverture & BPJEPS AGFF mention B ou D & \redcell{2 000–2 400€} & 3 600–4 320€ & \redcell{CRITIQUE} \\
+Barista / Resp. coffee & J1 ouverture & CAP barista ou formation café spécialité & 1 900–2 200€ & 3 420–3 960€ & \goldcell{HAUTE} \\
+\rowcolor{fc-bg2} Coach BJJ / Grappling & M3–M4 & CQP DEJEPS ou diplôme fédéral FFJJB & 2 000–2 400€ & 3 600–4 320€ & \goldcell{HAUTE} \\
+Coach Enfants / Ados & M3 (si kids dès M3) & BPJEPS AGFF + casier B3 vierge obligatoire & 1 900–2 200€ & 3 420–3 960€ & \goldcell{HAUTE} \\
+\rowcolor{fc-bg2} Community Manager / Boutique & M2–M3 & Aucune — expérience retail/réseaux & 1 800–2 000€ & 3 240–3 600€ & MOYENNE \\
+Responsable opérationnel & An 2 & Expérience gestion salle ou restauration & 2 400–3 000€ & 4 320–5 400€ & AN 2 \\
+\rowcolor{fc-bg2} Coach supplémentaire & An 2 si > 250 membres & BPJEPS selon discipline & 2 000–2 400€ & 3 600–4 320€ & AN 2 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{warnbox}
+⚠ Les encadrants de mineurs (cours enfants et ados) doivent obligatoirement présenter un extrait de casier judiciaire B3 vierge. Cette vérification est de la responsabilité légale du dirigeant. Un oubli expose à des sanctions pénales.
+\end{warnbox}
+
+\begin{tipbox}
+→ Pour les coachs combat, privilégier les profils déjà installés dans le bassin Saint-Malo (SMBJJ, SLAMM, clubs existants) qui ont un réseau local et une réputation. Un coach externe sans ancrage local aura du mal à attirer des élèves.
+\end{tipbox}
+
+\subsection{Certifications obligatoires et recommandées}
+
+L'encadrement d'activités physiques contre rémunération est réglementé en France. Tout coach doit être titulaire d'un diplôme homologué par l'État.
+
+\begin{center}
+\begin{tabular}{@{}p{3.5cm}p{3cm}p{2.5cm}p{3.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Diplôme} & \color{white}\textbf{Disciplines couvertes} & \color{white}\textbf{Durée formation} & \color{white}\textbf{Coût approx.} \\
+\midrule
+BPJEPS AGFF Mention A & Haltérophilie, Musculation & 400–600h en alternance & \redcell{2 000–5 000€} \\
+\rowcolor{fc-bg2} BPJEPS AGFF Mention B & Luttes, Judo, Sports de préhension & 400–600h & \redcell{2 000–5 000€} \\
+BPJEPS AGFF Mention D & Boxe anglaise, Savate, Muay Thaï & 400–600h & \redcell{2 000–5 000€} \\
+\rowcolor{fc-bg2} CQP Instructeur MMA (FMMAF) & MMA complet & \textasciitilde100h fédérale & 800–1 500€ \\
+CQP Instructeur BJJ (FFJJB) & Brazilian Jiu-Jitsu & \textasciitilde80h fédérale & 600–1 200€ \\
+\rowcolor{fc-bg2} DEJEPS Performance sportive & Entraîneur niveau 2 — compétition & 900h minimum & 4 000–8 000€ \\
+Attestation Casier B3 vierge & Obligatoire TOUS les encadrants mineurs & Gratuit — demande en ligne & \posnum{0€} \\
+\rowcolor{fc-bg2} Formation Gestes qui Sauvent & SST ou PSC1 recommandé & 7h & 60–120€/personne \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{BPJEPS vs CQP :} Le BPJEPS est le diplôme d'État de référence (niveau 4, BAC). Le CQP est un Certificat de Qualification Professionnelle délivré par la fédération — il autorise l'encadrement mais est moins reconnu pour un emploi salarié. Privilégier BPJEPS pour les coachs permanents.
+
+\textbf{Formation continue :} Prévoir un budget formation de 500–1 000€ par coach et par an. Finançable via l'OPCO Afdas (OPCO du sport et des loisirs).
+
+\subsection{Masse salariale prévisionnelle}
+
+\begin{center}
+\begin{tabular}{@{}p{5cm}p{3cm}p{3cm}p{3cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Équipe} & \color{white}\textbf{M1–M6 /mois} & \color{white}\textbf{M7–M12 /mois} & \color{white}\textbf{An 2 /mois} \\
+\midrule
+2 coachs J1 (MMA + Boxe) & 7 200–9 000€ & 7 200–9 000€ & 7 200–9 000€ \\
+\rowcolor{fc-bg2} 1 barista & 3 420–3 960€ & 3 420–3 960€ & 3 420–3 960€ \\
+1 coach enfants (M3+) & 0€ & 3 420–3 960€ & 3 420–3 960€ \\
+\rowcolor{fc-bg2} Community manager (M3+) & 0€ & 3 240–3 600€ & 3 240–3 600€ \\
+Coach BJJ (M4+) & 0€ & 0€ & 3 600–4 320€ \\
+\rowcolor{fc-bg2} Resp. opérationnel (An 2) & 0€ & 0€ & 4 320–5 400€ \\
+Fondateurs (progression) & 0–2 880€ & 4 320–6 480€ & 7 200–10 080€ \\
+\midrule
+\textbf{Total masse salariale} & \textbf{10 620–15 840€} & \textbf{21 600–27 000€} & \textbf{32 400–40 320€} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Analyse locale \& simulation bail commercial}
+\eyebrow{D — ANALYSE LOCALE \& BAIL}
+
+\subsection{Marché immobilier commercial à Pleurtuit}
+
+Pleurtuit est une commune en développement sur l'axe Saint-Malo / Dinard, avec un tissu commercial en croissance autour de la zone d'activités de la Croix Verte et de la RN137. Les loyers commerciaux y sont significativement inférieurs à Saint-Malo intramuros ou Dinard centre, ce qui est un avantage structurel pour FightCoffee.
+
+\textbf{Zone cible n°1 :} Zone d'activités de la Croix Verte (Pleurtuit) — locaux commerciaux neufs ou récents, accès voiture direct, visibilité depuis la RD. Loyers estimés 12–16 €/m².
+
+\textbf{Zone cible n°2 :} Zone artisanale Miniac-Morvan — à 5 min de Pleurtuit, loyers plus bas (10–14 €/m²) mais visibilité moindre. Solution de repli.
+
+\textbf{Zone à éviter :} Centre-bourg de Saint-Malo ou Dinard — loyers 20–30 €/m², peu de parkings, surface inadaptée. Hors budget pour 350 m².
+
+\begin{tipbox}
+→ Contacter directement la Mairie de Pleurtuit et la Communauté de Communes Côte d'Émeraude — certaines collectivités ont des locaux à louer à des conditions préférentielles pour des projets sportifs à vocation locale.
+\end{tipbox}
+
+\subsection{Simulation de loyer selon surface et zone}
+
+\begin{center}
+\begin{tabular}{@{}p{4.5cm}p{1.8cm}p{2.2cm}p{2.2cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Surface / Scénario} & \color{white}\textbf{€/m²/mois} & \color{white}\textbf{Loyer brut} & \color{white}\textbf{Charges est.} & \color{white}\textbf{Total mensuel} \\
+\midrule
+300 m² — loyer bas (zone périphérie) & 12 € & 3 600 € & 540 € & \posnum{4 140 €} \\
+\rowcolor{fc-bg2} 300 m² — loyer moyen & 15 € & 4 500 € & 675 € & 5 175 € \\
+350 m² — loyer cible BP ★ & 15 € & 5 250 € & 787 € & \redcell{6 037 €} \\
+\rowcolor{fc-bg2} 350 m² — loyer élevé (zone prime) & 18 € & 6 300 € & 945 € & 7 245 € \\
+400 m² — loyer moyen & 15 € & 6 000 € & 900 € & 6 900 € \\
+\rowcolor{fc-bg2} 400 m² — loyer élevé & 18 € & 7 200 € & 1 080 € & 8 280 € \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Le scénario BP retenu (350 m² à 15 €/m²) génère un loyer brut de 5 250 €/mois, charges comprises environ 6 037 €/mois. En dessous de 300 m², l'offre sportive est trop contrainte. Au-dessus de 400 m², la charge devient critique sur les premiers mois.
+
+\subsection{Points de négociation du bail commercial}
+
+\begin{center}
+\begin{tabular}{@{}p{3.5cm}p{4cm}p{5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Point de négociation} & \color{white}\textbf{Standard marché} & \color{white}\textbf{Objectif FightCoffee} \\
+\midrule
+Durée du bail & Bail commercial 3-6-9 (9 ans) & 3-6-9 avec option de sortie à 3 ans \\
+\rowcolor{fc-bg2} Loyer (€/m²/mois) & 12–22 €/m² selon zone Pleurtuit & Viser 14–17 €/m² max pour 350 m² \\
+Dépôt de garantie & 2 à 3 mois de loyer & Négocier à 1 mois si locataire solide \\
+\rowcolor{fc-bg2} Franchise de loyer & 0 à 3 mois selon état du local & Exiger 3–6 mois si travaux importants \\
+Travaux & À la charge du locataire & Négocier une participation propriétaire si travaux > 80k€ \\
+\rowcolor{fc-bg2} Charges récupérables & Variables selon contrat & Plafonner à 15\% du loyer dans le bail \\
+Clause destination & Restrictive par défaut & Obtenir destination large : salle de sport + commerce alimentaire + événementiel \\
+\rowcolor{fc-bg2} Indexation (ILC) & Annuelle sur ILC & Standard — prévoir +2–3\%/an dans le prévisionnel \\
+Droit au bail & 0 si local vide / 20–80k€ si reprise fonds & Privilégier local vide ou droit < 15k€ \\
+\rowcolor{fc-bg2} État des lieux & Contradictoire à l'entrée & Toujours faire appel à un huissier — 300–500€ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{warnbox}
+⚠ La clause de destination est critique : si le bail mentionne uniquement 'salle de sport', vous ne pouvez pas légalement exploiter un coffee shop ou organiser des événements payants. Exiger la mention explicite de toutes les activités prévues.
+\end{warnbox}
+
+\begin{tipbox}
+→ Séquence recommandée : 1) Trouver le local · 2) Lettre d'intention non engageante · 3) Négociation bail avec avocat · 4) Signature bail + création SAS simultanément ou SAS déjà créée.
+\end{tipbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Trésorerie mensuelle An 1 (12 mois)}
+\eyebrow{E — TRÉSORERIE MENSUELLE AN 1}
+
+Le tableau ci-dessous présente la trésorerie mensuelle sur 12 mois dans le scénario cible (200 membres fin An 1, pré-lancement structuré, tarification révisée). Tous les montants sont en milliers d'euros (k€). L'investissement initial de 220k€ est décaissé en M1.
+
+\begin{tipbox}
+Lecture : \textcolor{fc-red}{rouge} = flux négatif / sous pression · \textcolor{green!60!black}{vert} = flux positif. La trésorerie cumulée reste négative jusqu'en An 2 dans ce scénario — le financement initial doit couvrir le pic négatif de M1 (\textasciitilde234k€).
+\end{tipbox}
+
+\vspace{8pt}
+\begin{center}
+\small
+\begin{tabular}{@{}p{2.8cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Poste} & \color{white}\textbf{M1} & \color{white}\textbf{M2} & \color{white}\textbf{M3} & \color{white}\textbf{M4} & \color{white}\textbf{M5} & \color{white}\textbf{M6} & \color{white}\textbf{M7} & \color{white}\textbf{M8} & \color{white}\textbf{M9} & \color{white}\textbf{M10} & \color{white}\textbf{M11} & \color{white}\textbf{M12} \\
+\midrule
+\textbf{CA total (k€)} & \redcell{7} & \redcell{10} & \redcell{16} & \redcell{22} & \posnum{26} & \posnum{29} & \posnum{31} & \posnum{33} & \posnum{34} & \posnum{35} & \posnum{37} & \posnum{38} \\
+\rowcolor{fc-bg2} Abonnements & 4 & 7 & 11 & 14 & 16 & 19 & 20 & 20 & 22 & 23 & 24 & 25 \\
+Coffee/Snack & 1 & 1.5 & 3 & 4 & 5 & 5.5 & 6 & 7 & 7 & 7 & 7.5 & 8 \\
+\rowcolor{fc-bg2} Autres revenus & 2 & 1.5 & 2 & 4 & 5 & 4.5 & 5 & 6 & 5 & 5 & 5.5 & 5 \\
+Charges fixes (k€) & 16 & 16 & 16 & 16 & 16 & 16 & 17 & 17 & 17 & 17 & 17 & 17 \\
+\rowcolor{fc-bg2} COGS variables & 2 & 3 & 4.5 & 6 & 7 & 8 & 9 & 9 & 10 & 10 & 10 & 11 \\
+Investissement & \redcell{220} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\rowcolor{fc-bg2} Remb. emprunt & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+\midrule
+\textbf{Flux net (k€)} & \negnum{–234} & \negnum{–12} & \negnum{–7.5} & \negnum{–3} & \posnum{0} & \posnum{2} & \posnum{2} & \posnum{4} & \posnum{4} & \posnum{5} & \posnum{7} & \posnum{7} \\
+\rowcolor{fc-bg2}\textbf{Tréso cumulée} & \negnum{–234} & \negnum{–246} & \negnum{–254} & \negnum{–257} & \negnum{–257} & \negnum{–255} & \negnum{–253} & \negnum{–249} & \negnum{–245} & \negnum{–240} & \negnum{–233} & \negnum{–226} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Analyse des points critiques}
+
+\textbf{M1 — Pic de tension maximale :} L'investissement initial (220k€) est décaissé. La trésorerie plonge à –233k€. C'est pourquoi le financement total doit être sécurisé avant le premier jour de travaux. Ne pas démarrer sans les fonds.
+
+\textbf{M2 à M3 — Zone de danger :} Peu de membres, charges pleines. Les pré-ventes membres fondateurs (M-3 à M-1) doivent avoir généré des encaissements avant cette période pour alléger la pression.
+
+\textbf{M4–M5 — Point mort opérationnel mensuel :} Avec \textasciitilde130 membres et 22–26k€ de CA mensuel, le flux net approche la neutralité. C'est le premier jalon opérationnel à surveiller.
+
+\textbf{M6–M7 — Seuil de rentabilité mensuel :} Avec \textasciitilde145 membres et 29–31k€ de CA mensuel, le flux net devient régulièrement positif. La trésorerie cumulée commence à se redresser — très lentement.
+
+\textbf{M12 — Fin An 1 :} La trésorerie cumulée atteint –226k€. La trésorerie mensuelle est positive (+7k€/mois). An 2 commence avec une dynamique favorable mais le déficit cumulé (emprunt + démarrage) ne sera résorbé qu'en An 2–3.
+
+\begin{warnbox}
+⚠ Ce tableau ne tient pas compte des aléas (retard travaux +1 mois = –20k€ supplémentaires, mois creux non anticipé, recrutement difficile). Prévoir un matelas de sécurité de 15–20k€ au-dessus du fonds de roulement calculé.
+\end{warnbox}
+
+\begin{tipbox}
+→ Mettre en place un tableau de bord mensuel dès J1 : CA réel vs prévu, nombre de membres actifs, trésorerie disponible, charges engagées. Partager avec l'expert-comptable chaque mois.
+\end{tipbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Saisonnalité \& plan marketing pré-lancement}
+\eyebrow{F — SAISONNALITÉ \& MARKETING}
+
+\subsection{Saisonnalité par flux de revenus}
+
+Le bassin Saint-Malo / Pleurtuit présente une saisonnalité marquée : forte activité touristique juillet-août (+40\% population), rentrée de septembre comme pic d'inscription, creux de janvier-février classique pour les salles de sport. FightCoffee doit anticiper et transformer ces variations en opportunités.
+
+Le tableau ci-dessous exprime chaque flux en pourcentage d'un mois de référence (septembre = 100\%). Un indice inférieur à 80\% signale un risque de sous-performance sur ce flux.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{2.5cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}p{0.6cm}@{}}
+\toprule
+\rowcolor{fc-ink} & \color{white}\textbf{Jan} & \color{white}\textbf{Fév} & \color{white}\textbf{Mar} & \color{white}\textbf{Avr} & \color{white}\textbf{Mai} & \color{white}\textbf{Jun} & \color{white}\textbf{Jul} & \color{white}\textbf{Aoû} & \color{white}\textbf{Sep} & \color{white}\textbf{Oct} & \color{white}\textbf{Nov} & \color{white}\textbf{Déc} \\
+\midrule
+Abonnements sport & 85 & 87 & 90 & 92 & 93 & 90 & \redcell{70} & \redcell{65} & \posnum{100} & \posnum{105} & \posnum{100} & 95 \\
+\rowcolor{fc-bg2} Coffee \& snacking & 75 & 78 & 82 & 88 & 92 & 95 & \posnum{130} & \posnum{140} & \posnum{100} & 95 & 88 & 82 \\
+Événementiel & 80 & 80 & 85 & 85 & 90 & 95 & \posnum{120} & \posnum{125} & 90 & 85 & 85 & 90 \\
+\rowcolor{fc-bg2} Kids \& ados & \posnum{100} & \posnum{100} & \posnum{100} & \posnum{100} & \posnum{100} & \posnum{100} & \redcell{30} & \redcell{30} & \posnum{100} & \posnum{100} & \posnum{100} & \posnum{100} \\
+B2B & 90 & 90 & 90 & 90 & 90 & 85 & \redcell{70} & \redcell{70} & 95 & \posnum{100} & \posnum{100} & 95 \\
+\midrule
+\textbf{Indice global} & \textbf{75} & \textbf{80} & \textbf{85} & \textbf{88} & \textbf{90} & \textbf{88} & \textbf{85} & \textbf{85} & \textbf{100} & \textbf{100} & \textbf{95} & \textbf{88} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Lecture clé :} Les abonnements sport chutent en juillet-août (vacances, membres absents) mais le coffee, le snacking et l'événementiel explosent grâce au tourisme. Les cours kids s'effondrent en été (vacances scolaires). L'effet est globalement neutre si les flux lifestyle sont bien activés.
+
+\subsection{Stratégies anti-creux}
+
+\textbf{Janvier–Mars (creux traditionnel) :} Offre 'Résolutions' — mois d'essai à tarif réduit, challenge communautaire, stage intensive sur les vacances de février. Objectif : retenir les membres existants et convertir les curieux de janvier.
+
+\textbf{Juillet–Août (creux sport, boom lifestyle) :} Stage kids \& ados (revenus kids maintenus) · offre day-pass touristes · fight nights et événements estivaux · coffee shop en mode terrasse si espace extérieur disponible.
+
+\textbf{Septembre (pic d'inscription) :} Journée portes ouvertes rentrée · offre spéciale back-to-school · partenariat avec les écoles et collèges locaux · campagne réseaux sociaux ciblée.
+
+\subsection{Plan marketing pré-lancement \& An 1}
+
+\begin{center}
+\begin{tabular}{@{}p{2.5cm}p{4cm}p{2.5cm}p{2cm}p{3cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Phase} & \color{white}\textbf{Actions clés} & \color{white}\textbf{Canal prioritaire} & \color{white}\textbf{Budget} & \color{white}\textbf{Objectif} \\
+\midrule
+M-3 à M-1 Pré-lancement & Page Instagram + TikTok · teasing concept · liste d'attente · email fondateurs & Instagram + bouche-à-oreille & \redcell{1 500 €} & 500 followers · 50 inscrits liste \\
+\rowcolor{fc-bg2} M-1 Pré-vente & Offre membres fondateurs (tarif –15\% à vie) · communiqué local · flyers CrossFit / gymnases & Direct + presse locale & \redcell{1 500 €} & 80–100 membres fondateurs \\
+M1–M2 Ouverture & Journée portes ouvertes · masterclass gratuite · live Instagram · article Côté Saint-Malo & Event + réseaux + presse & \redcell{2 000 €} & Notoriété locale · 110 membres \\
+\rowcolor{fc-bg2} M3–M6 Croissance & Parrainage (1 mois offert) · cours essai gratuit · partenariat CE locaux · posts réguliers 4x/sem & Organique + parrainage & \redcell{1 000 €/mois} & 160–180 membres \\
+M6–M12 Événements & Fight night mensuel · diffusions UFC · masterclass fighter · presse lifestyle & Event + médias & \redcell{800 €/mois} & \redcell{200 membres} · notoriété régionale \\
+\rowcolor{fc-bg2} An 2+ Marque & Studio contenu · campagnes Meta ads · partenariats RVCA / RDX · podcast & Paid + contenu & \redcell{1 500 €/mois} & Marque nationale · 320+ membres \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Budget marketing total An 1}
+
+\begin{center}
+\begin{tabular}{@{}p{8cm}p{3cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{fc-ink}\color{white}\textbf{Poste} & \color{white}\textbf{Montant} & \color{white}\textbf{Période} \\
+\midrule
+Création identité visuelle (logo, charte, templates) & \redcell{1 500–3 000€} & M-4 à M-2 \\
+\rowcolor{fc-bg2} Site web (Webflow ou WordPress + réservations) & 1 000–2 500€ & M-3 \\
+Contenu pré-lancement (photo, vidéo teasing) & 800–1 500€ & M-3 à M-1 \\
+\rowcolor{fc-bg2} Flyers \& affichage local & 300–600€ & M-2 à M1 \\
+Événement ouverture (logistique, catering) & 1 500–2 500€ & M1 \\
+\rowcolor{fc-bg2} Publicité Meta Ads (ciblage local) & 500–1 000€/mois & M3 à M12 \\
+Partenariats \& co-promo (CE, mairies, clubs) & 500–1 000€ & M2 à M6 \\
+\rowcolor{fc-bg2} Budget événementiel fight nights (×5 An 1) & 500–1 000€/event & M6 à M12 \\
+\midrule
+\textbf{Budget marketing total An 1} & \textbf{12 000–18 000€} & M-4 à M12 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{KPIs marketing à suivre chaque mois}
+
+\begin{itemize}
+  \item Nombre d'abonnés Instagram / TikTok (cible M1 : 500 / M6 : 2 000)
+  \item Taux de conversion liste d'attente → membres fondateurs (cible : > 60\%)
+  \item Coût d'acquisition membre (CAC cible : < 50€)
+  \item Taux de rétention mensuelle (cible : > 90\% — churm < 10\%/mois)
+  \item CA coffee shop / nombre de passages (panier moyen cible : 5–8€)
+  \item NPS membres (Net Promoter Score — sondage trimestriel)
+\end{itemize}
+
+\vspace{16pt}
+\begin{center}
+\small\color{fc-ink3} FIGHTCOFFEE — Document confidentiel — Usage interne uniquement\\
+\color{fc-red} contact@fightcoffee.fr · fightcoffee.fr\quad\color{fc-ink3}·\quad Pleurtuit, Bretagne
+\end{center}
+
+\end{document}
