@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.9.19)  26 MAR 2026 15:13
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.9.19)  26 MAR 2026 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -816,7 +816,7 @@ File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '5.0.2'
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `colorlinks' set `true' on input line 60.
 
 Package fontspec Info: Font family 'LiberationSans(0)' created for font
 (fontspec)             'Liberation Sans' with options [Ligatures=TeX].
@@ -886,98 +886,99 @@ LaTeX Info: Redefining \ttfamily on input line 19.
 )
 \openout1 = `FightCoffee_BusinessPlan.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
-5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+01.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
+LaTeX Font Info:    ... okay on input line 101.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 85.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 85.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 85.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 85.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 85.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 85.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 85.
-LaTeX Font Info:    Redeclaring math accent \check on input line 85.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 85.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 85.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 85.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 85.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 85.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 101.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 101.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 101.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 101.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 101.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 101.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 101.
+LaTeX Font Info:    Redeclaring math accent \check on input line 101.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 101.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 101.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 101.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 101.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 101.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 85.
+(Font)              `operators' in the math version `normal' on input line 101.
+
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/LiberationSans(0)/m/n on input line 
-85.
+101.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 85.
+(Font)              `operators' in the math version `bold' on input line 101.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/LiberationSans(0)/m/n on input line
- 85.
+ 101.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/LiberationSans(0)/m/n --> TU/LiberationSans(0)/m/n o
-n input line 85.
+n input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/LiberationSans(0)/m/it on input lin
-e 85.
+e 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/LiberationSans(0)/b/n on input line
- 85.
+ 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 85.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/m/n on input line
- 85.
+ 101.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/LiberationSans(0)/m/n --> TU/LiberationSans(0)/b/n o
-n input line 85.
+n input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/LiberationSans(0)/b/it on input li
-ne 85.
+ne 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 85.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 101.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/b/n on input line
- 85.
+ 101.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1013,7 +1014,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 85.
+Package hyperref Info: Link coloring ON on input line 101.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1025,19 +1026,19 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count330
 )
-LaTeX Info: Redefining \ref on input line 85.
-LaTeX Info: Redefining \pageref on input line 85.
-LaTeX Info: Redefining \nameref on input line 85.
+LaTeX Info: Redefining \ref on input line 101.
+LaTeX Info: Redefining \pageref on input line 101.
+LaTeX Info: Redefining \nameref on input line 101.
 
 (./FightCoffee_BusinessPlan.out) (./FightCoffee_BusinessPlan.out)
 \@outlinefile=\write4
 \openout4 = `FightCoffee_BusinessPlan.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 85.
-Package microtype Info: Applying patch `item' on input line 85.
-Package microtype Info: Applying patch `toc' on input line 85.
-Package microtype Info: Applying patch `eqnum' on input line 85.
-Package microtype Info: Applying patch `footnote' on input line 85.
+LaTeX Info: Redefining \microtypecontext on input line 101.
+Package microtype Info: Applying patch `item' on input line 101.
+Package microtype Info: Applying patch `toc' on input line 101.
+Package microtype Info: Applying patch `eqnum' on input line 101.
+Package microtype Info: Applying patch `footnote' on input line 101.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1047,9 +1048,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LiberationSans' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Info: Redefining \rmfamily on input line 85.
-LaTeX Info: Redefining \sffamily on input line 85.
-LaTeX Info: Redefining \ttfamily on input line 85.
+LaTeX Info: Redefining \rmfamily on input line 101.
+LaTeX Info: Redefining \sffamily on input line 101.
+LaTeX Info: Redefining \ttfamily on input line 101.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LiberationMono' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1085,7 +1086,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [2]
-Overfull \hbox (18.3167pt too wide) in paragraph at lines 144--145
+Overfull \hbox (18.3167pt too wide) in paragraph at lines 160--161
 []\TU/LiberationSans(0)/m/n/10.95 En été, la population du bassin augmente d’en
 viron 40% grâce au tourisme côtier — flux directement
  []
@@ -1099,17 +1100,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 153--153
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
 []|\TU/LiberationSans(0)/b/n/10.95 Taux
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 []|\TU/LiberationSans(0)/b/n/10.95 Membres
  []
 
 
-Overfull \hbox (6.29915pt too wide) in paragraph at lines 184--185
+Overfull \hbox (6.29915pt too wide) in paragraph at lines 200--201
 []\TU/LiberationSans(0)/m/n/10.95 La zone Saint-Malo / Dinard / Pleurtuit compt
 e plusieurs structures de combat, toutes associatives
  []
@@ -1123,30 +1124,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [4]
-Overfull \hbox (1.7669pt too wide) in paragraph at lines 205--206
+Overfull \hbox (1.7669pt too wide) in paragraph at lines 221--222
 \TU/LiberationSans(0)/m/n/10.95 Les clubs existants opèrent tous dans des gymna
 ses municipaux, sans lieu propre, sans marque,
  []
 
 
-Overfull \hbox (16.31082pt too wide) in paragraph at lines 215--216
+Overfull \hbox (16.31082pt too wide) in paragraph at lines 231--232
 []\TU/LiberationSans(0)/m/n/10.95 Tarification revue en cohérence avec le march
 é local semi-rural breton et la concurrence associative
  []
 
 
-Overfull \hbox (6.16945pt too wide) in paragraph at lines 215--216
+Overfull \hbox (6.16945pt too wide) in paragraph at lines 231--232
 \TU/LiberationSans(0)/m/n/10.95 (200–400 €/an). Positionnement premium justifié
  par l’expérience, mais accessible à une clientèle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 []|\TU/LiberationSans(0)/m/n/10.95 Toutes disciplines · cours
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 227--228
+Underfull \hbox (badness 1406) in paragraph at lines 243--244
 []|\TU/LiberationSans(0)/m/n/10.95 Par séance · tarifs dégressifs
  []
 
@@ -1159,34 +1160,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [5]
-Overfull \hbox (37.53972pt too wide) in paragraph at lines 243--244
+Overfull \hbox (37.53972pt too wide) in paragraph at lines 259--260
 []\TU/LiberationSans(0)/b/n/10.95 B2B & groupes : \TU/LiberationSans(0)/m/n/10.
 95 Démarche active auprès des comités d’entreprise locaux, agences d’événementi
 el,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 []|\TU/LiberationSans(0)/b/n/10.95 Fourchette (200k€
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\TU/LiberationSans(0)/m/n/10.95 Équipements combat (sacs, ring,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--260
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
 []|\TU/LiberationSans(0)/m/n/10.95 Systèmes (POS, logiciel salle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
-[]|\TU/LiberationSans(0)/m/n/10.95 Fonds de roulement (3 mois de
+Underfull \hbox (badness 10000) in paragraph at lines 277--277
+[]|\TU/LiberationSans(0)/m/n/10.95 Fonds de roulement (5 mois de
  []
 
 
-Overfull \hbox (32.19485pt too wide) in paragraph at lines 275--276
+Overfull \hbox (32.19485pt too wide) in paragraph at lines 298--299
 []\TU/LiberationSans(0)/b/n/10.95 Dispositifs d’aide : \TU/LiberationSans(0)/m/
 n/10.95 ACRE (exonération charges 1ère année), prêt d’honneur Réseau Entreprend
 re
@@ -1201,27 +1202,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 319--319
 []|\TU/LiberationSans(0)/m/n/10.95 Approvisionnement coffee &
  []
 
 
-Underfull \hbox (badness 1173) in paragraph at lines 293--293
+Underfull \hbox (badness 1173) in paragraph at lines 320--320
 []|\TU/LiberationSans(0)/m/n/10.95 Assurances (RC Pro, multirisque,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--294
+Underfull \hbox (badness 10000) in paragraph at lines 321--321
 []|\TU/LiberationSans(0)/m/n/10.95 Logiciels (POS, gestion salle,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--295
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
 []|\TU/LiberationSans(0)/m/n/10.95 Marketing & communication
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--296
+Underfull \hbox (badness 10000) in paragraph at lines 323--323
 []|\TU/LiberationSans(0)/m/n/10.95 Entretien, petits équipements,
  []
 
@@ -1234,29 +1235,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
 []|\TU/LiberationSans(0)/b/n/10.95 M1–M2 (Pré-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 374--374
 []|\TU/LiberationSans(0)/b/n/10.95 M3–M4
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
 []|\TU/LiberationSans(0)/m/n/10.95 Pré-vente 80–
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--349
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
 []|\TU/LiberationSans(0)/m/n/10.95 130 mbr +
  []
 
 Missing character: There is no ★ (U+2605) in font Liberation Sans Bold/OT:scrip
 t=latn;language=dflt;mapping=tex-text;!
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--350
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 []|[]\TU/LiberationSans(0)/b/n/10.95 200 mbr ★
  []
 
@@ -1269,12 +1270,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
 []|[]\TU/LiberationSans(0)/b/n/10.95 M14–M16 après
  []
 
-Missing character: There is no ★ (U+2605) in font Liberation Sans Bold/OT:scrip
-t=latn;language=dflt;mapping=tex-text;!
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.4pt, for example:
@@ -1284,6 +1283,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [9]
+Missing character: There is no ⚠ (U+26A0) in font Liberation Sans Bold/OT:scrip
+t=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ★ (U+2605) in font Liberation Sans Bold/OT:scrip
+t=latn;language=dflt;mapping=tex-text;!
+Missing character: There is no ⚠ (U+26A0) in font Liberation Sans Italic/OT:scr
+ipt=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ★ (U+2605) in font Liberation Sans Bold/OT:scrip
 t=latn;language=dflt;mapping=tex-text;!
 
@@ -1295,74 +1300,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [10]
-Overfull \hbox (20.68687pt too wide) in paragraph at lines 499--500
+Overfull \hbox (20.68687pt too wide) in paragraph at lines 529--530
 []\TU/LiberationSans(0)/m/n/10.95 Étude d’un second site côtier (Vannes ou Bres
 t — premier marché hors bassin Saint-Malo/Dinard) 
- []
-
-
-Underfull \hbox (badness 5985) in paragraph at lines 528--528
-[]|\TU/LiberationSans(0)/m/n/10.95 Montée en charge trop
- []
-
-
-Underfull \hbox (badness 2529) in paragraph at lines 529--529
-[]|\TU/LiberationSans(0)/m/n/10.95 Loyer trop élevé / local
- []
-
-
-Underfull \hbox (badness 1852) in paragraph at lines 529--530
-\TU/LiberationSans(0)/m/n/10.95 Négocier franchise de loyer 3–6
- []
-
-
-Underfull \hbox (badness 4193) in paragraph at lines 531--531
-[]|\TU/LiberationSans(0)/m/n/10.95 Sous-performance coffee
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
-[]|\TU/LiberationSans(0)/m/n/10.95 Barista formé dès J1. Offre
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
-\TU/LiberationSans(0)/m/n/10.95 simple et sans cuisine lourde.
- []
-
-
-Underfull \hbox (badness 3861) in paragraph at lines 532--533
-[]|\TU/LiberationSans(0)/m/n/10.95 Stages vacances, offre B2B en
- []
-
-
-Underfull \hbox (badness 5475) in paragraph at lines 532--533
-\TU/LiberationSans(0)/m/n/10.95 creux, fight nights pour animer.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 533--533
-[]|\TU/LiberationSans(0)/m/n/10.95 Sensibilité prix clientèle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--534
-[]|\TU/LiberationSans(0)/m/n/10.95 Entrée d’un concurrent
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--534
-[]|[]\TU/LiberationSans(0)/m/n/10.95 FAIBLE (3
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--535
-[]|\TU/LiberationSans(0)/m/n/10.95 Réglementation ERP /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
-[]|\TU/LiberationSans(0)/m/n/10.95 Conformité ERP type S dès
  []
 
 
@@ -1374,6 +1314,70 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.4pt}.
 
 [11]
+Underfull \hbox (badness 5985) in paragraph at lines 558--558
+[]|\TU/LiberationSans(0)/m/n/10.95 Montée en charge trop
+ []
+
+
+Underfull \hbox (badness 2529) in paragraph at lines 559--559
+[]|\TU/LiberationSans(0)/m/n/10.95 Loyer trop élevé / local
+ []
+
+
+Underfull \hbox (badness 1852) in paragraph at lines 559--560
+\TU/LiberationSans(0)/m/n/10.95 Négocier franchise de loyer 3–6
+ []
+
+
+Underfull \hbox (badness 4193) in paragraph at lines 561--561
+[]|\TU/LiberationSans(0)/m/n/10.95 Sous-performance coffee
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+[]|\TU/LiberationSans(0)/m/n/10.95 Barista formé dès J1. Offre
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+\TU/LiberationSans(0)/m/n/10.95 simple et sans cuisine lourde.
+ []
+
+
+Underfull \hbox (badness 3861) in paragraph at lines 562--563
+[]|\TU/LiberationSans(0)/m/n/10.95 Stages vacances, offre B2B en
+ []
+
+
+Underfull \hbox (badness 5475) in paragraph at lines 562--563
+\TU/LiberationSans(0)/m/n/10.95 creux, fight nights pour animer.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 563--563
+[]|\TU/LiberationSans(0)/m/n/10.95 Sensibilité prix clientèle
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
+[]|\TU/LiberationSans(0)/m/n/10.95 Entrée d’un concurrent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
+[]|[]\TU/LiberationSans(0)/m/n/10.95 FAIBLE (3
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--565
+[]|\TU/LiberationSans(0)/m/n/10.95 Réglementation ERP /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
+[]|\TU/LiberationSans(0)/m/n/10.95 Conformité ERP type S dès
+ []
+
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1409,7 +1413,6 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 12.4pt, for example:
 (fancyhdr)                \setlength{\headheight}{12.4pt}.
@@ -1424,15 +1427,15 @@ LaTeX Info: Redefining \ttfamily on input line 19.
 )
 Package rerunfilecheck Info: File `FightCoffee_BusinessPlan.out' has not change
 d.
-(rerunfilecheck)             Checksum: 61CE4E2688B42387E7AE6F687BC5736A;7070.
+(rerunfilecheck)             Checksum: 00E199A2690DBE3DC8829AB2A8D9A80B;7525.
  ) 
 Here is how much of TeX's memory you used:
- 28548 strings out of 478190
- 614130 string characters out of 5854827
- 1031767 words of memory out of 5000000
- 48692 multiletter control sequences out of 15000+600000
+ 28593 strings out of 478190
+ 615112 string characters out of 5854827
+ 1026955 words of memory out of 5000000
+ 48737 multiletter control sequences out of 15000+600000
  472646 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 83i,11n,80p,1213b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,12n,80p,1213b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on FightCoffee_BusinessPlan.pdf (12 pages).
