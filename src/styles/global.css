@@ -378,23 +378,29 @@ nav.scrolled {
 .slide-nav {
   position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
   z-index: 300; display: flex; flex-direction: column; align-items: center;
-  gap: 0; background: var(--white); border: 1px solid var(--rule);
-  box-shadow: 0 4px 20px rgba(24,22,20,0.1);
+  gap: 12px; background: none; border: none; box-shadow: none;
 }
 .slide-nav-btn {
-  width: 44px; height: 44px; border: none; background: none; cursor: pointer;
+  width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  color: var(--ink3); transition: color 0.15s, background 0.15s;
+  background: rgba(248,246,242,0.55); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(24,22,20,0.15);
+  color: var(--ink2); transition: background 0.2s, color 0.2s, transform 0.15s;
 }
-.slide-nav-btn:hover { color: var(--ink); background: var(--bg2); }
-.slide-nav-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
-.slide-nav-sep { width: 1px; height: 28px; background: var(--rule); }
+.slide-nav-btn:hover { background: rgba(248,246,242,0.85); color: var(--ink); transform: scale(1.08); }
+.slide-nav-btn:disabled { opacity: 0.3; cursor: default; pointer-events: none; transform: none; }
+.slide-nav-sep { display: none; }
 .slide-nav-count {
   font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
-  color: var(--ink3); padding: 6px 0; text-align: center; width: 44px;
-  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  color: var(--ink3); text-align: center;
+  background: rgba(248,246,242,0.55); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px; padding: 5px 10px;
+  box-shadow: 0 2px 8px rgba(24,22,20,0.1);
+  border: none;
 }
-@media (max-width: 768px) { .slide-nav { right: 12px; } }
+@media (max-width: 768px) { .slide-nav { right: 12px; } .slide-nav-btn { width: 48px; height: 48px; } }
 
 /* ══════════════════════════════════════════════════
    NEW UTILITY CLASSES
